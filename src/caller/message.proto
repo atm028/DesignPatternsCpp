@@ -1,0 +1,21 @@
+syntax = "proto2";
+message CallerMsg {
+    enum Request {
+        REQ_NONE = 0;
+        REQ_INVITE = 1;
+        REQ_ACK = 2;
+        REQ_BYE = 3;
+        REQ_INFO = 4;
+        REQ_ERROR = 5;
+    }
+    enum Response {
+        RSP_NONE = 0;
+        RSP_RINGING = 1;
+        RSP_OK = 2;
+        RSP_BUSY = 3;
+    }
+
+    optional Request req = 1;
+    optional Response rsp = 2;
+    optional int32 port = 3;
+}
